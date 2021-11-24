@@ -59,5 +59,9 @@
         add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
         add_header Access-Control-Allow-Headers 'Keep-Alive,X-R
  equested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+
+        if ($request_method = 'OPTIONS') {
+           return 204;
+        }
  }
  ```
