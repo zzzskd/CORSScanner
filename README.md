@@ -51,13 +51,13 @@
  ### 四、错误的 Nginx 配置 
  
  ```
-
-location / {
+ location / {
         # First attempt to serve request as file, then
         # as directory, then fall back to displaying a 404.
         add_header Access-Control-Allow-Origin '$http_origin';
         add_header Access-Control-Allow-Credentials 'true';
         add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
         add_header Access-Control-Allow-Headers 'Keep-Alive,X-R
-equested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+ equested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+ }
  ```

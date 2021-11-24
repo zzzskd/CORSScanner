@@ -131,7 +131,7 @@ public class CORSVulChecker {
             String[] tmp = header.split(":", 2);
             String key = tmp[0].trim();
             String value = tmp[1].trim();
-            std.println(key + value);
+            // std.println(key + value);
             if (key.toLowerCase().startsWith("access-control-allow-origin") && value.contains(originHeaderValue)) {
                 // acao -> Access-Control-Allow-Origin
                 acao = true;

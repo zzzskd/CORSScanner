@@ -1,6 +1,7 @@
 package burp;
 
 import java.io.PrintWriter;
+import java.net.URL;
 import java.util.List;
 
 public class BurpExtender implements IBurpExtender, IScannerCheck {
@@ -29,9 +30,18 @@ public class BurpExtender implements IBurpExtender, IScannerCheck {
 
     public List<IScanIssue> doPassiveScan(IHttpRequestResponse iHttpRequestResponse) {
 
-        std.println("[*] Passive Scan: " + helpers.analyzeRequest(iHttpRequestResponse).getUrl().getPath());
-
         IRequestInfo iRequestInfo = helpers.analyzeRequest(iHttpRequestResponse);
+        URL url = iRequestInfo.getUrl();
+
+        String method = iRequestInfo.getMethod();
+        String protocol = url.getProtocol();
+        String host = url.getHost();
+        String path = url.getPath();
+
+        // TODO: 可以根据 dest 去重，减少请求次数。
+        String dest = method + " " + protocol + "://" + host + path;
+
+        std.println("[*] Passive Scan: " + dest);
 //        CORSVulChecker checker = new CORSVulChecker(iHttpRequestResponse);
         CORSVulChecker checker = new CORSVulChecker(callbacks, iHttpRequestResponse, std);
         boolean isVul = checker.check();
