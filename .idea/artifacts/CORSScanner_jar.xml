@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CORSScanner:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CORSScanner_jar</output-path>
+    <root id="archive" name="CORSScanner.jar">
+      <element id="module-output" name="CORSScanner" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/portswigger/burp/extender/burp-extender-api/2.1/burp-extender-api-2.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
